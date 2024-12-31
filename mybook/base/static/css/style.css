@@ -1,0 +1,97 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .form-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .form-box h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  .input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  .input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+  }
+  .input-group input:focus {
+    border-color: #007bff;
+  }
+  
+  .form-footer {
+    margin-top: 20px;
+  }
+  .form-footer .btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .form-footer .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .form-footer p {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #777;
+  }
+  .form-footer a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  .form-footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  }
+  
