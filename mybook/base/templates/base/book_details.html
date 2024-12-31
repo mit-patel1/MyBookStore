@@ -1,0 +1,22 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Content Section -->
+<div class="content-section">
+    {% for bimage in book_datas.images.all %}
+    <img src="{{ bimage.image.url }}" class="card-img-top" alt="Growth">
+    {% endfor %}
+    <h2 class="book-title">{{ book_datas.name }}</h2>
+    <p class="book-author">Author: {{ book_datas.author.name }}</p>
+    <p class="book-description">{{ book_datas.description }}</p>
+    {% if book_datas.purchase_link %}
+        <a href="{{ book_datas.purchase_link }}" target="_blank" class="buy-btn">Buy Now</a>
+    {% else %}
+        <span class="text-danger">Purchase link not available</span>
+    {% endif %}
+</div>
+
+
+{% endblock %}

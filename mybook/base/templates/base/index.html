@@ -1,0 +1,414 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <title>UNIQUEISM & GROUP PUBLICATION -Enter The World Of Words</title> -->
+  <title>{% block title %}
+  UNIQUEISM & GROUP PUBLICATION -Enter The World Of Words
+  {% endblock %}
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  {% block header %}
+  {% endblock %}
+  <style>
+    .navbar-brand {
+      font-size: 1.5rem;
+
+    }
+
+    /* Change the color of navbar links to dark blue */
+    .navbar-nav .nav-link {
+      color: rgb(2, 2, 25) !important;
+      /* Use !important to override default styles */
+    }
+
+    /* Optional: Change color on hover */
+    .navbar-nav .nav-link:hover {
+      color: #00008b;
+      /* Slightly darker shade of blue */
+      text-decoration: underline;
+      /* Optional for hover effect */
+    }
+
+
+    .navbar-nav {
+      margin: auto;
+      /* Centers the navigation items */
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      /* Adds spacing between items */
+    }
+
+
+
+    .navbar-nav .nav-link {
+      font-size: 16px;
+      font-weight: bold;
+
+      /* Set navbar item size */
+
+      /* Optional: makes text bold */
+    }
+
+
+
+    .hero-section {
+      background: url('your-banner-image.jpg') no-repeat center center;
+      background-size: cover;
+      color: white;
+      padding: 5rem 0;
+    }
+
+    .card {
+      border: none;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      /* Slightly enlarges the card */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      /* Adds a shadow effect */
+      cursor: pointer;
+      /* Changes the cursor to a pointer */
+      background-color: #f8f9fa;
+    }
+
+    .logo {
+      height: 85px;
+      /* Adjust height */
+      width: auto;
+      /* Maintain aspect ratio */
+    }
+
+
+    footer {
+      font-size: 16px;
+      /* Set footer text size */
+    }
+
+    footer h5 {
+      font-size: 18px;
+      /* Footer section titles size */
+    }
+
+    footer p,
+    footer a {
+      font-size: 16px;
+      /* Footer links and general text size */
+    }
+
+    .btn-primary {
+      font-size: 16px;
+      /* Set button text size in footer */
+    }
+
+
+
+    /* Dropdown menu styling */
+    .dropdown-menu {
+      background-color: #f8f9fa;
+      /* Background color for dropdown menu */
+      border: none;
+      /* Optional: Remove border */
+    }
+
+    /* Dropdown menu items */
+    .dropdown-item {
+      font-size: 18px;
+      /* Set font size */
+      color: #333;
+      /* Default text color */
+      transition: all 0.3s ease;
+      /* Smooth transition for hover effects */
+    }
+
+    /* Hover effect for dropdown items */
+    .dropdown-item:hover {
+      background-color: #007bff;
+      /* Highlight background color on hover */
+      color: white;
+      /* Text color on hover */
+    }
+
+
+    .bg-dark h1 {
+      font-size: 3rem;
+      /* Adjust the size of the h1 */
+    }
+
+    .bg-dark p {
+      font-size: 1.5rem;
+      /* Adjust the size of the paragraph */
+    }
+
+    .bg-dark .btn {
+      font-size: 1.5rem;
+      /* Adjust the size of the button text */
+      padding: 10px 20px;
+      /* Adjust button padding for larger size */
+    }
+
+
+
+
+    .my-books-btn {
+      background-color: hsl(107, 100%, 50%);
+      /* Change to your desired background color */
+      color: rgb(15, 2, 2);
+      /* Text color */
+      padding: 10px 20px;
+      /* Adjust padding as needed */
+      font-size: 18px;
+      /* Set the font size */
+      font-weight: bold;
+      /* Make the text bold */
+      border-radius: 5px;
+      /* Rounded corners */
+      text-decoration: none;
+      /* Remove underline */
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      /* Smooth transition */
+    }
+
+    .my-books-btn:hover {
+      background-color: hsl(256, 88%, 16%);
+      /* Darker background on hover */
+      transform: translateY(-3px);
+      color: #f8f9fa;
+      /* Lift the button on hover */
+    }
+
+    .carousel-caption {
+      background-color: rgba(0, 0, 0, 0.6);
+      /* Semi-transparent background */
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+
+
+
+    .carousel-caption p {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 24px;
+      /* Adjust the size as per your requirement */
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /* CSS for resizing carousel images */
+    .carousel-item img {
+      height: 500px;
+      /* Adjust the height as needed */
+      object-fit: cover;
+      /* Ensures the image scales proportionally */
+      width: 100%;
+      /* Ensures the image spans the entire carousel width */
+    }
+
+
+    .common-btn {
+      background-color: hsl(267, 50%, 38%);
+      /* Same background for all */
+      color: white;
+      /* Text color */
+      padding: 10px 20px;
+      /* Uniform padding */
+      font-size: 16px;
+      /* Same font size */
+      font-weight: bold;
+      /* Bold text */
+      border-radius: 5px;
+      /* Rounded corners */
+      text-decoration: none;
+      /* No underline */
+      display: inline-block;
+      /* To ensure proper spacing */
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .common-btn:hover {
+      background-color: hsl(267, 74%, 81%);
+      /* Slightly darker background on hover */
+      transform: scale(1.05);
+      color: #080202;
+      /* Slight zoom effect */
+    }
+
+    .card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-img-top {
+      height: 200px;
+      /* Adjust as needed */
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="{% static 'images/final.png' %}" alt="uniqueism-Logo" class="logo">
+
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
+              data-bs-toggle="dropdown">
+              Books
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Most Popular</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+                <form class="px-4 py-2">
+                  <label for="email" class="form-label">Get Top Trending Free Books in Your Inbox</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                  <button type="submit" class="btn btn-primary btn-sm mt-2">Subscribe</button>
+                </form>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="#">Blogs</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="#">Publish</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+              Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+              <li><a class="dropdown-item" href="#">Book Editing</a></li>
+              <li><a class="dropdown-item" href="#">Book Design</a></li>
+              <li><a class="dropdown-item" href="#">Self Publishing</a></li>
+              <li><a class="dropdown-item" href="#">Marketing Services for Authors</a></li>
+              <li><a class="dropdown-item" href="#">Educational Content Development</a></li>
+              <li><a class="dropdown-item" href="#">Printing Services</a></li>
+              <li><a class="dropdown-item" href="#">Other Author Services</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="#">Author</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="socialMediaDropdown" data-bs-toggle="dropdown">Follow
+              Us</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://facebook.com" target="_blank"><i
+                    class="fab fa-facebook-f me-2"></i>Facebook</a></li>
+              <li><a class="dropdown-item" href="https://twitter.com" target="_blank"><i
+                    class="fab fa-twitter me-2"></i>Twitter</a></li>
+              <li><a class="dropdown-item" href="https://instagram.com" target="_blank"><i
+                    class="fab fa-instagram me-2"></i>Instagram</a></li>
+              <li><a class="dropdown-item" href="https://linkedin.com" target="_blank"><i
+                    class="fab fa-linkedin-in me-2"></i>LinkedIn</a></li>
+              <li><a class="dropdown-item" href="https://youtube.com" target="_blank"><i
+                    class="fab fa-youtube me-2"></i>YouTube</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <a href="#" class="common-btn">My Books</a>
+        <a href="{% url 'register' %}" class="common-btn ms-2">Register</a>
+        <a href="{% url 'login' %}" class="common-btn ms-2">Login</a>
+      </div>
+    </div>
+
+
+  </nav>
+
+  {% block content %}
+  {% endblock %}
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <!-- Social Media Icons -->
+      <div class="mb-3">
+        <a href="https://facebook.com" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://youtube.com" class="text-white"><i class="fab fa-youtube"></i></a>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="row text-center">
+        <div class="col-md-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Home</a></li>
+            <li><a href="#" class="text-white">Explore Books</a></li>
+            <li><a href="#" class="text-white">Services</a></li>
+            <li><a href="#" class="text-white">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <p>Email: journeywithuniqueismandgroup@gmail.com</p>
+          <p>+91 97265 66260</p>
+          <p>Ahmedabad City</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Newsletter</h5>
+          <form>
+            <input type="email" class="form-control mb-2" placeholder="Enter your email">
+            <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <hr class="bg-light my-4">
+
+      <!-- Copyright -->
+      <p class="mb-0">&copy; {% now "Y" %} Uniqueism & Group Publication. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  {% block script %}
+  {% endblock %}
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS (needs jQuery and Popper.js) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

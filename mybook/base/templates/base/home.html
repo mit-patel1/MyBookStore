@@ -1,0 +1,227 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block title %}
+UNIQUEISM & GROUP PUBLICATION -Enter The World Of Words
+{% endblock %}
+
+{% block content %}
+
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+        aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+    </div>
+
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <img src="{% static 'images/libraryimgechauhankailash.jpg' %}" class="d-block w-100" alt="Slide 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="text-white">Join Our Community</h1>
+          <p>Follow us for updates on books, blogs, and more</p>
+          <a href="followus" class="btn btn-primary">Follow Us</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <img src="{% static 'images/carousel1cap.jpg' %}" class="d-block w-100" alt="Slide 2">
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="text-white">Discover New Books</h1>
+          <p>Explore a world of literature and knowledge</p>
+          <a href="#discover-books" class="btn btn-primary">Explore Books</a>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <img src="{% static 'images/global.png' %}" class="d-block w-100" alt="Slide 3">
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="text-white">Connect with Us</h1>
+          <p>Engage with us on social media for the latest updates</p>
+          <a href="#connect-with-us" class="btn btn-primary">Connect Now</a>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="carousel-item">
+        <img src="{% static 'images/webservices.png' %}" class="d-block w-100" alt="Slide 4">
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="text-white">Explore Our Books & Publication Services</h1>
+          <p>Discover our services related to book publishing, editing, design, and more.</p>
+          <a href="#services" class="btn btn-primary">Explore Services</a>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="carousel-item">
+        <img src="{% static 'images/publishing1.webp' %}" class="d-block w-100" alt="Slide 5">
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="text-white">Stay Updated</h1>
+          <p>Get the latest blog posts directly in your inbox</p>
+          <a href="#stay-updated" class="btn btn-primary">Subscribe</a>
+        </div>
+      </div>
+
+      <!-- Slide 6 -->
+      <div class="carousel-item">
+        <img src="{% static 'images/carousel2.jpg' %}" class="d-block w-100" alt="Slide 6">
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="text-white">Join Our Newsletter</h1>
+          <p>Get exclusive updates on new releases, services, and more</p>
+          <a href="#join-newsletter" class="btn btn-primary">Subscribe Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel controls (optional) -->
+    <!-- Previous Button with Font Awesome Icon -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <i class="fas fa-chevron-left"></i> <!-- Font Awesome icon for "Previous" -->
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <!-- Next Button with Font Awesome Icon -->
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <i class="fas fa-chevron-right"></i> <!-- Font Awesome icon for "Next" -->
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Categories Section -->
+  {% if books %}
+  <div class="container my-5">
+    <h2 class="text-center mb-4">4 Productivity Books To Read Right Now</h2>
+    <div class="row">
+      {% for book in books %}
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card">
+          <img src="{{ book.images.last.image.url }}" class="card-img-top" alt="Growth">
+          <div class="card-body">
+            <h3 class="card-title">{{book.name}}</h3>
+            <p class="card-text">{{book.description}}
+            </p>
+            <a href="book_detail/{{book.id}}" class="btn btn-secondary">Details</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Categories Section -->
+  <div class="container my-5">
+    <h2 class="text-center mb-4">4 Self-Help Books To Read Right Now</h2>
+    <div class="row">
+      <!-- Card 1 -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card">
+          <img src="{% static 'images/powerofnow.jpg' %}" class="card-img-top" alt="Fiction">
+          <div class="card-body">
+            <h5 class="card-title"> The Power of Now: A Guide to Spiritual Enlightenment by Eckhart Tolle</h5>
+            <p class="card-text">Offers deep spiritual insights on overcoming the ego and finding true peace</p>
+            <a href="#" class="btn btn-secondary">Details</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card">
+          <img src="{% static 'images/baddas.jpg' %}" class="card-img-top" alt="Non-Fiction">
+          <div class="card-body">
+            <h5 class="card-title">You Are a Badass by Jen Sincero</h5>
+            <p class="card-text">A motivational and humorous guide to self-empowerment and confidence building.</p>
+            <a href="#" class="btn btn-secondary">Details</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card">
+          <img src="{% static 'images/daring.jpg' %}" class="card-img-top" alt="Science">
+          <div class="card-body">
+            <h5 class="card-title">Daring Greatly by Brené Brown</h5>
+            <p class="card-text">Explores the power of vulnerability and how it leads to courage, connection, and
+              creativity.</p>
+            <a href="#" class="btn btn-secondary">Details</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card">
+          <img src="{% static 'images/mans.jpg' %}" class="card-img-top" alt="Biography">
+          <div class="card-body">
+            <h5 class="card-title">Man’s Search for Meaning by Viktor E. Frankl</h5>
+            <p class="card-text">A deeply moving memoir and philosophical exploration of finding purpose in life.</p>
+            <a href="#" class="btn btn-secondary">Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Categories Section -->
+<div class="container my-5">
+  <h2 class="text-center mb-4">Featured Articles</h2>
+  <div class="row">
+    <!-- Card 1 -->
+    <div class="col-md-3 col-sm-6 mb-4">
+      <div class="card">
+        <img src="{% static 'images/cover design.jpg' %}" class="card-img-top" alt="Philosophy of Books">
+        <div class="card-body">
+          <h5 class="card-title">Philosophy of Books</h5>
+          <p class="card-text">Explore why books are essential for personal growth and understanding.</p>
+          <!-- Keep this URL empty for future use -->
+          <a href="philosophy_of_books" class="btn btn-secondary">Read More</a>
+        </div>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="col-md-3 col-sm-6 mb-4">
+      <div class="card">
+        <img src="{% static 'images/reading book1.jpg' %}" class="card-img-top" alt="Art of Reading">
+        <div class="card-body">
+          <h5 class="card-title">The Art of Reading</h5>
+          <p class="card-text">Dive into how reading shapes our thoughts and cultivates empathy.</p>
+          <!-- Keep this URL empty for future use -->
+          <a href="the_art_of_reading" class="btn btn-secondary">Read More</a>
+        </div>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="col-md-3 col-sm-6 mb-4">
+      <div class="card">
+        <img src="{% static 'images/reading book 2.jpg' %}" class="card-img-top" alt="Timeless Classics">
+        <div class="card-body">
+          <h5 class="card-title">Timeless Classics</h5>
+          <p class="card-text">Uncover the enduring relevance of timeless literary masterpieces.</p>
+          <!-- Keep this URL empty for future use -->
+          <a href="timelessclassic" class="btn btn-secondary">Read More</a>
+        </div>
+      </div>
+    </div>
+    <!-- Card 4 -->
+    <div class="col-md-3 col-sm-6 mb-4">
+      <div class="card">
+        <img src="{% static 'images/philosophyandliterature.jpg' %}" class="card-img-top" alt="Philosophy and Literature">
+        <div class="card-body">
+          <h5 class="card-title">Philosophy and Literature</h5>
+          <p class="card-text">Understand how literature serves as a medium for philosophical ideas.</p>
+          <!-- Keep this URL empty for future use -->
+          <a href="philosophy_and_literature" class="btn  btn-secondary">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
