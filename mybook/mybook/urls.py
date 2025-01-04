@@ -22,8 +22,10 @@ from base import views as base_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("", include("accounts.urls")),
     path('', base_view.index, name='home'),
-    path('book_detail/<int:book_id>', base_view.book_detail, name='Details'),
+    path('book_detail/<int:book_id>/', base_view.book_detail, name='Details'),
+    path('books/<int:category_id>/', base_view.categories_wise_books, name='books'),
     path('accounts/', include('accounts.urls')),
 ]
 
