@@ -115,7 +115,7 @@ UNIQUEISM & GROUP PUBLICATION -Enter The World Of Words
       {% endfor %}
     </div>
   </div>
-  {% endif %}
+  {% else %}
 
   <!-- Categories Section -->
   <div class="container my-5">
@@ -168,60 +168,6 @@ UNIQUEISM & GROUP PUBLICATION -Enter The World Of Words
       </div>
     </div>
   </div>
-
-  <!-- Categories Section -->
-<div class="container my-5">
-  <h2 class="text-center mb-4">Featured Articles</h2>
-  <div class="row">
-    <!-- Card 1 -->
-    <div class="col-md-3 col-sm-6 mb-4">
-      <div class="card">
-        <img src="{% static 'images/cover design.jpg' %}" class="card-img-top" alt="Philosophy of Books">
-        <div class="card-body">
-          <h5 class="card-title">Philosophy of Books</h5>
-          <p class="card-text">Explore why books are essential for personal growth and understanding.</p>
-          <!-- Keep this URL empty for future use -->
-          <a href="philosophy_of_books" class="btn btn-secondary">Read More</a>
-        </div>
-      </div>
-    </div>
-    <!-- Card 2 -->
-    <div class="col-md-3 col-sm-6 mb-4">
-      <div class="card">
-        <img src="{% static 'images/reading book1.jpg' %}" class="card-img-top" alt="Art of Reading">
-        <div class="card-body">
-          <h5 class="card-title">The Art of Reading</h5>
-          <p class="card-text">Dive into how reading shapes our thoughts and cultivates empathy.</p>
-          <!-- Keep this URL empty for future use -->
-          <a href="the_art_of_reading" class="btn btn-secondary">Read More</a>
-        </div>
-      </div>
-    </div>
-    <!-- Card 3 -->
-    <div class="col-md-3 col-sm-6 mb-4">
-      <div class="card">
-        <img src="{% static 'images/reading book 2.jpg' %}" class="card-img-top" alt="Timeless Classics">
-        <div class="card-body">
-          <h5 class="card-title">Timeless Classics</h5>
-          <p class="card-text">Uncover the enduring relevance of timeless literary masterpieces.</p>
-          <!-- Keep this URL empty for future use -->
-          <a href="timelessclassic" class="btn btn-secondary">Read More</a>
-        </div>
-      </div>
-    </div>
-    <!-- Card 4 -->
-    <div class="col-md-3 col-sm-6 mb-4">
-      <div class="card">
-        <img src="{% static 'images/philosophyandliterature.jpg' %}" class="card-img-top" alt="Philosophy and Literature">
-        <div class="card-body">
-          <h5 class="card-title">Philosophy and Literature</h5>
-          <p class="card-text">Understand how literature serves as a medium for philosophical ideas.</p>
-          <!-- Keep this URL empty for future use -->
-          <a href="philosophy_and_literature" class="btn  btn-secondary">Read More</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  {% endif %}
 
 {% endblock %}
