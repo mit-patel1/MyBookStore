@@ -1,9 +1,9 @@
 from django.db import models
-from django.contrib.auth.models import User
 import os
 import re
 from django.conf import settings
 from datetime import datetime
+from accounts.models import CustomUser
 
 
 def sanitize_filename(name):
@@ -41,7 +41,7 @@ class Author(models.Model):
 class Books(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
-    created_by = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='user')
+    created_by = models.ForeignKey(CustomUser, on_delete=models.PROTECT, verbose_name='user')
     author = models.ForeignKey(Author, on_delete=models.PROTECT, null=True, verbose_name='author')
     category = models.ManyToManyField(Categories, verbose_name='category')
     purchase_link = models.URLField(blank=True, null=True)
