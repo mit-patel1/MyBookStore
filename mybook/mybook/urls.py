@@ -25,7 +25,7 @@ urlpatterns = [
     path("", include("accounts.urls")),
     path('', base_view.index, name='home'),
     path('my_book/', base_view.my_book, name='my_book'),
-    path('book_detail/<int:book_id>/', base_view.book_detail, name='Details'),
+    path('book_detail/<int:book_id>/', base_view.book_detail, name='book_detail'),
     path('books/<int:category_id>/', base_view.categories_wise_books, name='books'),
     path('accounts/', include('accounts.urls')),
     path('add/', base_view.add_book, name='add_book'),

@@ -44,6 +44,7 @@ def add_book(request):
             book = form.save(commit=False)
             book.created_by = request.user
             book.save()
+            form.save_m2m()
             formset.instance = book
             formset.save()
             messages.success(request, 'Book added successfully.')
@@ -61,10 +62,11 @@ def edit_book(request, pk):
         form = BookForm(request.POST, instance=book)
         formset = BookImageFormSet(request.POST, request.FILES, instance=book)
         if form.is_valid() and formset.is_valid():
-            form.save()
+            form.save(commit=False)
+            form.save_m2m()
             formset.save()
             messages.success(request, 'Book updated successfully!')
-            return redirect('book_detail', pk=book.pk)
+            return redirect(f'/book_detail/{book.pk}')
     else:
         form = BookForm(instance=book)
         formset = BookImageFormSet(instance=book)
