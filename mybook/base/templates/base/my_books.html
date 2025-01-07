@@ -1,0 +1,35 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block title %}
+My books
+{% endblock %}
+
+{% block content %}
+
+  <!-- Categories Section -->
+  {% if books %}
+  <div class="container my-5">
+    <h2 class="text-center mb-4">My Books</h2>
+    <div class="row">
+      {% for book in books %}
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card">
+          <img src="{{ book.images.last.image.url }}" class="card-img-top" alt="Growth">
+          <div class="card-body">
+            <h3 class="card-title">{{book.name}}</h3>
+            <p class="card-text">{{book.description}}
+            </p>
+            <a href="/book_detail/{{book.id}}/" class="btn btn-secondary">Details</a>
+            <a href="/{{book.id}}/edit/" class="btn btn-secondary">Edit</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% else %}
+  <h2 class="text-center mb-4">Don`t have any books.</h2>
+  {% endif %}
+
+{% endblock %}
