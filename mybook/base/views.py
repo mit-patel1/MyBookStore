@@ -1,10 +1,13 @@
 from django.shortcuts import render, redirect
-from base.models import Books, Author, Categories,BookImage
+from base.models import Books, Author, Categories,BookImage, Subscriber
 from django.contrib.auth.decorators import login_required
 from .forms import BookForm, BookImageForm
 from django.forms import inlineformset_factory
 from django.contrib import messages
 from django.shortcuts import get_object_or_404
+from django.core.exceptions import ValidationError
+from django.core.validators import validate_email
+
 
 BookImageFormSet = inlineformset_factory(
     Books,
@@ -71,4 +74,19 @@ def edit_book(request, pk):
         form = BookForm(instance=book)
         formset = BookImageFormSet(instance=book)
     return render(request, 'base/edit_book.html', {'form': form, 'formset': formset})
+
+
+
+def custom_email_subscription(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')  # Get the email from the form
+        try:
+            validate_email(email)  # Django's built-in email validator
+            # Save to the database
+            Subscriber.objects.create(email=email)
+            messages.success(request, 'Thank you for subscribe!')
+        except ValidationError:
+            messages.error(request, "Please enter a valid email address.")
+    return redirect(request.META.get('HTTP_REFERER', '/'))
+
 

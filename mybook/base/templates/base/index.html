@@ -389,8 +389,9 @@
         </div>
         <div class="col-md-4">
           <h5>Newsletter</h5>
-          <form>
-            <input type="email" class="form-control mb-2" placeholder="Enter your email">
+          <form method="POST" action="{% url 'custom_email_subscription' %}">
+            {% csrf_token %}
+            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
             <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
           </form>
         </div>

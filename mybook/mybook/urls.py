@@ -30,6 +30,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('add/', base_view.add_book, name='add_book'),
     path('<int:pk>/edit/', base_view.edit_book, name='edit_book'),
+    path('custom-subscribe/', base_view.custom_email_subscription, name='custom_email_subscription'),
 ]
 
 if settings.DEBUG:

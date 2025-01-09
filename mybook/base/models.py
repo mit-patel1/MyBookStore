@@ -57,3 +57,9 @@ class BookImage(models.Model):
 
     def __str__(self):
         return f"Image for {self.book.name}"
+    
+
+class Subscriber(models.Model):
+    email = models.EmailField()
+    created_on = models.DateTimeField(auto_now_add=True)
+
