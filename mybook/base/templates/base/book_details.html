@@ -1,22 +1,108 @@
 {% extends 'base/index.html' %}
 {% load static %}
 
+{% block header %}
+<style>
+/* Content Section */
+.content-section {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 20px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Ensures no overflow */
+}
+
+.book-cover-container {
+    float: left;
+    width: 35%;
+    margin-right: 20px;
+    border-radius: 8px;
+    overflow: hidden; /* Prevents the image from going outside */
+}
+
+.book-cover {
+    width: 100%;
+    height: auto; /* Maintains aspect ratio */
+    display: block;
+    border-radius: 8px;
+}
+
+/* Book Info */
+.book-info {
+    overflow: hidden; /* Clears the float */
+}
+
+.book-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.book-author {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 15px;
+}
+
+.book-description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.buy-btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.buy-btn:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 768px) {
+    .book-cover-container {
+        width: 100%;
+        height: auto;
+        float: none;
+        margin-bottom: 20px;
+    }
+}
+</style>
+{% endblock %}
+
 {% block content %}
 
 <!-- Content Section -->
 <div class="content-section">
-    {% for bimage in book_datas.images.all %}
-    <img src="{{ bimage.image.url }}" class="card-img-top" alt="Growth">
-    {% endfor %}
-    <h2 class="book-title">{{ book_datas.name }}</h2>
-    <p class="book-author">Author: {{ book_datas.author.name }}</p>
-    <p class="book-description">{{ book_datas.description }}</p>
-    {% if book_datas.purchase_link %}
-        <a href="{{ book_datas.purchase_link }}" target="_blank" class="buy-btn">Buy Now</a>
-    {% else %}
-        <span class="text-danger">Purchase link not available</span>
-    {% endif %}
+    <div class="book-details-container">
+        <!-- Book Cover Image -->
+        <div class="book-cover-container">
+            <img src="{{ book_datas.images.first.image.url }}" alt="Book Title Example" class="book-cover">
+        </div>
+        
+        <!-- Book Details -->
+        <div class="book-info">
+            <h2 class="book-title">{{ book_datas.name }}</h2>
+            <p class="book-author">Author: {{ book_datas.author.name }}</p>
+            <p class="book-description">
+                {{ book_datas.description }}
+            </p>
+            
+            {% if book_datas.purchase_link %}
+                <a href="{{ book_datas.purchase_link }}" target="_blank" class="buy-btn">Buy Now</a>
+            {% else %}
+                <span class="text-danger">Purchase link not available</span>
+            {% endif %}
+        </div>
+    </div>
 </div>
-
 
 {% endblock %}
